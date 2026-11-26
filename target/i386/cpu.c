@@ -3547,10 +3547,10 @@ static const X86CPUDefinition builtin_x86_defs[] = {
     {
         .name = "qemu64",
         .level = 0xd,
-        .vendor = CPUID_VENDOR_AMD,
-        .family = 15,
-        .model = 107,
-        .stepping = 1,
+        .vendor = CPUID_VENDOR_INTEL,
+        .family = 6,
+        .model = 158,
+        .stepping = 10,
         .features[FEAT_1_EDX] =
             PPRO_FEATURES |
             CPUID_MTRR | CPUID_CLFLUSH | CPUID_MCA |
@@ -3560,16 +3560,16 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_8000_0001_EDX] =
             CPUID_EXT2_LM | CPUID_EXT2_SYSCALL | CPUID_EXT2_NX,
         .features[FEAT_8000_0001_ECX] =
-            CPUID_EXT3_LAHF_LM | CPUID_EXT3_SVM,
+            CPUID_EXT3_LAHF_LM,
         .xlevel = 0x8000000A,
-        .model_id = "QEMU Virtual CPU version " QEMU_HW_VERSION,
+        .model_id = "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
     },
     {
         .name = "phenom",
         .level = 5,
         .vendor = CPUID_VENDOR_AMD,
         .family = 16,
-        .model = 2,
+        .model = 4,
         .stepping = 3,
         /* Missing: CPUID_HT */
         .features[FEAT_1_EDX] =
@@ -3594,15 +3594,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_SVM] =
             CPUID_SVM_NPT,
         .xlevel = 0x8000001A,
-        .model_id = "AMD Phenom(tm) 9550 Quad-Core Processor"
+        .model_id = "AMD Phenom(tm) II X4 955 Processor"
     },
     {
         .name = "core2duo",
         .level = 10,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 15,
-        .stepping = 11,
+        .model = 23,
+        .stepping = 6,
         /* Missing: CPUID_DTS, CPUID_HT, CPUID_TM, CPUID_PBE */
         .features[FEAT_1_EDX] =
             PPRO_FEATURES |
@@ -3636,15 +3636,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_VMX_SECONDARY_CTLS] =
              VMX_SECONDARY_EXEC_VIRTUALIZE_APIC_ACCESSES,
         .xlevel = 0x80000008,
-        .model_id = "Intel(R) Core(TM)2 Duo CPU     T7700  @ 2.40GHz",
+        .model_id = "Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz",
     },
     {
         .name = "kvm64",
         .level = 0xd,
         .vendor = CPUID_VENDOR_INTEL,
-        .family = 15,
-        .model = 6,
-        .stepping = 1,
+        .family = 6,
+        .model = 158,
+        .stepping = 10,
         /* Missing: CPUID_HT */
         .features[FEAT_1_EDX] =
             PPRO_FEATURES | CPUID_VME |
@@ -3677,29 +3677,29 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_CPU_BASED_UNCOND_IO_EXITING | VMX_CPU_BASED_USE_IO_BITMAPS |
              VMX_CPU_BASED_MONITOR_EXITING | VMX_CPU_BASED_PAUSE_EXITING,
         .xlevel = 0x80000008,
-        .model_id = "Common KVM processor"
+        .model_id = "Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz"
     },
     {
         .name = "qemu32",
         .level = 4,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 6,
-        .stepping = 3,
+        .model = 58,
+        .stepping = 9,
         .features[FEAT_1_EDX] =
             PPRO_FEATURES,
         .features[FEAT_1_ECX] =
             CPUID_EXT_SSE3,
         .xlevel = 0x80000004,
-        .model_id = "QEMU Virtual CPU version " QEMU_HW_VERSION,
+        .model_id = "Intel(R) Core(TM) i3-3220 CPU @ 3.30GHz",
     },
     {
         .name = "kvm32",
         .level = 5,
         .vendor = CPUID_VENDOR_INTEL,
-        .family = 15,
-        .model = 6,
-        .stepping = 1,
+        .family = 6,
+        .model = 60,
+        .stepping = 3,
         .features[FEAT_1_EDX] =
             PPRO_FEATURES | CPUID_VME |
             CPUID_MTRR | CPUID_CLFLUSH | CPUID_MCA | CPUID_PSE36,
@@ -3721,15 +3721,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_CPU_BASED_USE_IO_BITMAPS | VMX_CPU_BASED_MONITOR_EXITING |
              VMX_CPU_BASED_PAUSE_EXITING | VMX_CPU_BASED_USE_MSR_BITMAPS,
         .xlevel = 0x80000008,
-        .model_id = "Common 32-bit KVM processor"
+        .model_id = "Intel(R) Pentium(R) CPU G3220 @ 3.00GHz"
     },
     {
         .name = "coreduo",
         .level = 10,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 14,
-        .stepping = 8,
+        .model = 15,
+        .stepping = 11,
         /* Missing: CPUID_DTS, CPUID_HT, CPUID_TM, CPUID_PBE */
         .features[FEAT_1_EDX] =
             PPRO_FEATURES | CPUID_VME |
@@ -3754,19 +3754,19 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_CPU_BASED_USE_IO_BITMAPS | VMX_CPU_BASED_MONITOR_EXITING |
              VMX_CPU_BASED_PAUSE_EXITING | VMX_CPU_BASED_USE_MSR_BITMAPS,
         .xlevel = 0x80000008,
-        .model_id = "Genuine Intel(R) CPU           T2600  @ 2.16GHz",
+        .model_id = "Intel(R) Core(TM)2 Duo CPU T7700 @ 2.40GHz",
     },
     {
         .name = "486",
         .level = 1,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 4,
-        .model = 8,
-        .stepping = 0,
+        .model = 4,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             I486_FEATURES,
         .xlevel = 0,
-        .model_id = "",
+        .model_id = "Intel(R) 486DX2 66MHz",
         .cache_info = &legacy_intel_cpuid2_cache_info,
     },
     {
@@ -3774,12 +3774,12 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 1,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 5,
-        .model = 4,
-        .stepping = 3,
+        .model = 2,
+        .stepping = 4,
         .features[FEAT_1_EDX] =
             PENTIUM_FEATURES,
         .xlevel = 0,
-        .model_id = "",
+        .model_id = "Intel(R) Pentium(R) Processor 133MHz",
         .cache_info = &legacy_intel_cpuid2_cache_info,
     },
     {
@@ -3792,7 +3792,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_1_EDX] =
             PENTIUM2_FEATURES,
         .xlevel = 0,
-        .model_id = "",
+        .model_id = "Intel(R) Pentium(R) II Processor 400MHz",
         .cache_info = &legacy_intel_cpuid2_cache_info,
     },
     {
@@ -3800,20 +3800,20 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 3,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 7,
-        .stepping = 3,
+        .model = 8,
+        .stepping = 6,
         .features[FEAT_1_EDX] =
             PENTIUM3_FEATURES,
         .xlevel = 0,
-        .model_id = "",
+        .model_id = "Intel(R) Pentium(R) III CPU 1000MHz",
         .cache_info = &legacy_intel_cpuid2_cache_info,
     },
     {
         .name = "athlon",
         .level = 2,
         .vendor = CPUID_VENDOR_AMD,
-        .family = 6,
-        .model = 2,
+        .family = 16,
+        .model = 5,
         .stepping = 3,
         .features[FEAT_1_EDX] =
             PPRO_FEATURES | CPUID_PSE36 | CPUID_VME | CPUID_MTRR |
@@ -3821,7 +3821,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_8000_0001_EDX] =
             CPUID_EXT2_MMXEXT | CPUID_EXT2_3DNOW | CPUID_EXT2_3DNOWEXT,
         .xlevel = 0x80000008,
-        .model_id = "QEMU Virtual CPU version " QEMU_HW_VERSION,
+        .model_id = "AMD Athlon(tm) II X4 640 Processor",
     },
     {
         .name = "n270",
@@ -3846,7 +3846,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_8000_0001_ECX] =
             CPUID_EXT3_LAHF_LM,
         .xlevel = 0x80000008,
-        .model_id = "Intel(R) Atom(TM) CPU N270   @ 1.60GHz",
+        .model_id = "Intel(R) Atom(TM) CPU N270 @ 1.60GHz",
     },
     {
         .name = "Conroe",
@@ -3854,7 +3854,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 15,
-        .stepping = 3,
+        .stepping = 6,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -3886,7 +3886,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_VMX_SECONDARY_CTLS] =
              VMX_SECONDARY_EXEC_VIRTUALIZE_APIC_ACCESSES,
         .xlevel = 0x80000008,
-        .model_id = "Intel Celeron_4x0 (Conroe/Merom Class Core 2)",
+        .model_id = "Intel(R) Core(TM)2 Duo CPU E6600 @ 2.40GHz",
     },
     {
         .name = "Penryn",
@@ -3894,7 +3894,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 23,
-        .stepping = 3,
+        .stepping = 6,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -3930,7 +3930,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_VIRTUALIZE_APIC_ACCESSES |
              VMX_SECONDARY_EXEC_WBINVD_EXITING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Core 2 Duo P9xxx (Penryn Class Core 2)",
+        .model_id = "Intel(R) Core(TM)2 Quad CPU Q9550 @ 2.83GHz",
     },
     {
         .name = "Nehalem",
@@ -3938,7 +3938,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 26,
-        .stepping = 3,
+        .stepping = 4,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -3993,7 +3993,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_VIRTUALIZE_X2APIC_MODE |
              VMX_SECONDARY_EXEC_ENABLE_VPID,
         .xlevel = 0x80000008,
-        .model_id = "Intel Core i7 9xx (Nehalem Class Core i7)",
+        .model_id = "Intel(R) Core(TM) i7 CPU 920 @ 2.67GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4015,7 +4015,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 44,
-        .stepping = 1,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4074,7 +4074,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_VIRTUALIZE_X2APIC_MODE |
              VMX_SECONDARY_EXEC_ENABLE_VPID | VMX_SECONDARY_EXEC_UNRESTRICTED_GUEST,
         .xlevel = 0x80000008,
-        .model_id = "Westmere E56xx/L56xx/X56xx (Nehalem-C)",
+        .model_id = "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4096,7 +4096,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 42,
-        .stepping = 1,
+        .stepping = 7,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4160,7 +4160,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_VIRTUALIZE_X2APIC_MODE |
              VMX_SECONDARY_EXEC_ENABLE_VPID | VMX_SECONDARY_EXEC_UNRESTRICTED_GUEST,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon E312xx (Sandy Bridge)",
+        .model_id = "Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4252,7 +4252,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_VIRTUAL_INTR_DELIVERY |
              VMX_SECONDARY_EXEC_RDRAND_EXITING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon E3-12xx v2 (Ivy Bridge)",
+        .model_id = "Intel(R) Core(TM) i7-3770K CPU @ 3.50GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4274,7 +4274,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 60,
-        .stepping = 4,
+        .stepping = 3,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4349,7 +4349,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_ENABLE_VMFUNC | VMX_SECONDARY_EXEC_SHADOW_VMCS,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Core Processor (Haswell)",
+        .model_id = "Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4402,8 +4402,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 61,
-        .stepping = 2,
+        .model = 71,
+        .stepping = 1,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4480,7 +4480,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Core Processor (Broadwell)",
+        .model_id = "Intel(R) Core(TM) i7-5775C CPU @ 3.30GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4604,7 +4604,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Core Processor (Skylake)",
+        .model_id = "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4645,8 +4645,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 85,
-        .stepping = 4,
+        .model = 79,
+        .stepping = 1,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4730,7 +4730,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_ENABLE_VMFUNC | VMX_SECONDARY_EXEC_SHADOW_VMCS |
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (Skylake)",
+        .model_id = "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -4791,7 +4791,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 85,
-        .stepping = 6,
+        .stepping = 7,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -4878,7 +4878,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_ENABLE_VMFUNC | VMX_SECONDARY_EXEC_SHADOW_VMCS |
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (Cascadelake)",
+        .model_id = "Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             { .version = 2,
@@ -4942,8 +4942,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 85,
-        .stepping = 10,
+        .model = 106,
+        .stepping = 6,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -5038,7 +5038,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (Cooperlake)",
+        .model_id = "Intel(R) Xeon(R) Platinum 8360Y CPU @ 2.40GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             { .version = 2,
@@ -5057,8 +5057,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 134,
-        .stepping = 0,
+        .model = 106,
+        .stepping = 6,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -5149,7 +5149,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDRAND_EXITING | VMX_SECONDARY_EXEC_ENABLE_INVPCID |
              VMX_SECONDARY_EXEC_ENABLE_VMFUNC | VMX_SECONDARY_EXEC_SHADOW_VMCS,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (Icelake)",
+        .model_id = "Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -5245,7 +5245,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 143,
-        .stepping = 4,
+        .stepping = 7,
         /*
          * please keep the ascending order so that we can have a clear view of
          * bit position of each feature.
@@ -5362,7 +5362,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_VMX_VMFUNC] =
             MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (SapphireRapids)",
+        .model_id = "Intel(R) Xeon(R) Platinum 8480+ CPU @ 2.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -5439,7 +5439,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 173,
-        .stepping = 0,
+        .stepping = 1,
         /*
          * please keep the ascending order so that we can have a clear view of
          * bit position of each feature.
@@ -5563,7 +5563,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_VMX_VMFUNC] =
             MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (GraniteRapids)",
+        .model_id = "Intel(R) Xeon(R) Platinum 9490 CPU @ 2.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -5635,9 +5635,9 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .name = "DiamondRapids",
         .level = 0x29,
         .vendor = CPUID_VENDOR_INTEL,
-        .family = 0x13, /* family: 0xf, extended famil: 0x4 */
-        .model = 0x1, /* model: 0x1, extended model: 0x0 */
-        .stepping = 0,
+        .family = 6, /* family: 0xf, extended famil: 0x4 */
+        .model = 207, /* model: 0x1, extended model: 0x0 */
+        .stepping = 2,
         .avx10_version = 2, /* avx10.2 */
         .cpuid_0x1f = true,
         /*
@@ -5821,7 +5821,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             VMX_SECONDARY_EXEC_ENABLE_USER_WAIT_PAUSE,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (DiamondRapids)",
+        .model_id = "Intel(R) Xeon(R) Platinum 8592+ CPU @ 1.90GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -5841,7 +5841,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 175,
-        .stepping = 0,
+        .stepping = 1,
         /*
          * please keep the ascending order so that we can have a clear view of
          * bit position of each feature.
@@ -5955,7 +5955,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_VMX_VMFUNC] =
             MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Processor (SierraForest)",
+        .model_id = "Intel(R) Xeon(R) Platinum 8580 CPU @ 2.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -6023,7 +6023,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 221,
-        .stepping = 0,
+        .stepping = 1,
         /*
          * please keep the ascending order so that we can have a clear view of
          * bit position of each feature.
@@ -6145,7 +6145,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             VMX_SECONDARY_EXEC_XSAVES,
         .features[FEAT_VMX_VMFUNC] =
             MSR_VMX_VMFUNC_EPT_SWITCHING,
-        .model_id = "Intel Xeon Processor (ClearwaterForest)",
+        .model_id = "Intel(R) Xeon(R) 6980P CPU @ 2.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -6185,7 +6185,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 21,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 95,
+        .model = 102,
         .stepping = 1,
         .features[FEAT_1_EDX] =
             CPUID_FP87 | CPUID_VME | CPUID_DE | CPUID_PSE | CPUID_TSC |
@@ -6266,7 +6266,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Atom Processor (Denverton)",
+        .model_id = "Intel(R) Atom(TM) CPU C3958 @ 2.00GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -6295,7 +6295,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 27,
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
-        .model = 134,
+        .model = 122,
         .stepping = 1,
         .features[FEAT_1_EDX] =
             /* missing: CPUID_PN CPUID_IA64 */
@@ -6399,7 +6399,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
              VMX_SECONDARY_EXEC_RDSEED_EXITING | VMX_SECONDARY_EXEC_ENABLE_PML,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Intel Atom Processor (SnowRidge)",
+        .model_id = "Intel(R) Atom(TM) CPU P5362 @ 2.20GHz",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -6437,7 +6437,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_INTEL,
         .family = 6,
         .model = 133,
-        .stepping = 0,
+        .stepping = 1,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SS | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR |
             CPUID_MMX | CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV |
@@ -6471,15 +6471,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_6_EAX] =
             CPUID_6_EAX_ARAT,
         .xlevel = 0x80000008,
-        .model_id = "Intel Xeon Phi Processor (Knights Mill)",
+        .model_id = "Intel(R) Xeon Phi(TM) CPU 7290F @ 1.50GHz",
     },
     {
         .name = "Opteron_G1",
         .level = 5,
         .vendor = CPUID_VENDOR_AMD,
         .family = 15,
-        .model = 6,
-        .stepping = 1,
+        .model = 1,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -6491,15 +6491,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_8000_0001_EDX] =
             CPUID_EXT2_LM | CPUID_EXT2_NX | CPUID_EXT2_SYSCALL,
         .xlevel = 0x80000008,
-        .model_id = "AMD Opteron 240 (Gen 1 Class Opteron)",
+        .model_id = "AMD Opteron(tm) Processor 240",
     },
     {
         .name = "Opteron_G2",
         .level = 5,
         .vendor = CPUID_VENDOR_AMD,
         .family = 15,
-        .model = 6,
-        .stepping = 1,
+        .model = 33,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             CPUID_VME | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
             CPUID_CLFLUSH | CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA |
@@ -6513,7 +6513,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_8000_0001_ECX] =
             CPUID_EXT3_SVM | CPUID_EXT3_LAHF_LM,
         .xlevel = 0x80000008,
-        .model_id = "AMD Opteron 22xx (Gen 2 Class Opteron)",
+        .model_id = "AMD Opteron(tm) Processor 2218",
     },
     {
         .name = "Opteron_G3",
@@ -6538,7 +6538,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             CPUID_EXT3_MISALIGNSSE | CPUID_EXT3_SSE4A |
             CPUID_EXT3_ABM | CPUID_EXT3_SVM | CPUID_EXT3_LAHF_LM,
         .xlevel = 0x80000008,
-        .model_id = "AMD Opteron 23xx (Gen 3 Class Opteron)",
+        .model_id = "AMD Opteron(tm) Processor 2356",
     },
     {
         .name = "Opteron_G4",
@@ -6570,7 +6570,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE,
         /* no xsaveopt! */
         .xlevel = 0x8000001A,
-        .model_id = "AMD Opteron 62xx class CPU",
+        .model_id = "AMD Opteron(tm) Processor 6276",
     },
     {
         .name = "Opteron_G5",
@@ -6602,15 +6602,15 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE,
         /* no xsaveopt! */
         .xlevel = 0x8000001A,
-        .model_id = "AMD Opteron 63xx class CPU",
+        .model_id = "AMD Opteron(tm) Processor 6380",
     },
     {
         .name = "EPYC",
         .level = 0xd,
         .vendor = CPUID_VENDOR_AMD,
-        .family = 23,
+        .family = 25,
         .model = 1,
-        .stepping = 2,
+        .stepping = 1,
         .features[FEAT_1_EDX] =
             CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX | CPUID_CLFLUSH |
             CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA | CPUID_PGE |
@@ -6645,7 +6645,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_SVM] =
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE,
         .xlevel = 0x8000001E,
-        .model_id = "AMD EPYC Processor",
+        .model_id = "AMD EPYC 7601 32-Core Processor",
         .cache_info = &epyc_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
@@ -6708,8 +6708,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_HYGON,
         .family = 24,
-        .model = 0,
-        .stepping = 1,
+        .model = 1,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX | CPUID_CLFLUSH |
             CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA | CPUID_PGE |
@@ -6746,7 +6746,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_SVM] =
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE,
         .xlevel = 0x8000001E,
-        .model_id = "Hygon Dhyana Processor",
+        .model_id = "Hygon C86 7185 32-Core Processor",
         .cache_info = &epyc_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
@@ -6764,8 +6764,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .name = "EPYC-Rome",
         .level = 0xd,
         .vendor = CPUID_VENDOR_AMD,
-        .family = 23,
-        .model = 49,
+        .family = 25,
+        .model = 17,
         .stepping = 0,
         .features[FEAT_1_EDX] =
             CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX | CPUID_CLFLUSH |
@@ -6807,7 +6807,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_SVM] =
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE,
         .xlevel = 0x8000001E,
-        .model_id = "AMD EPYC-Rome Processor",
+        .model_id = "AMD EPYC 7742 64-Core Processor",
         .cache_info = &epyc_rome_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
@@ -6865,8 +6865,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_AMD,
         .family = 25,
-        .model = 1,
-        .stepping = 1,
+        .model = 33,
+        .stepping = 0,
         .features[FEAT_1_EDX] =
             CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX | CPUID_CLFLUSH |
             CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA | CPUID_PGE |
@@ -6912,7 +6912,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .features[FEAT_SVM] =
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE | CPUID_SVM_SVME_ADDR_CHK,
         .xlevel = 0x8000001E,
-        .model_id = "AMD EPYC-Milan Processor",
+        .model_id = "AMD EPYC 7763 64-Core Processor",
         .cache_info = &epyc_milan_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
@@ -6969,8 +6969,8 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .level = 0xd,
         .vendor = CPUID_VENDOR_AMD,
         .family = 25,
-        .model = 17,
-        .stepping = 0,
+        .model = 97,
+        .stepping = 2,
         .features[FEAT_1_EDX] =
             CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX | CPUID_CLFLUSH |
             CPUID_PSE36 | CPUID_PAT | CPUID_CMOV | CPUID_MCA | CPUID_PGE |
@@ -7033,7 +7033,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             CPUID_SVM_NPT | CPUID_SVM_NRIPSAVE | CPUID_SVM_VNMI |
             CPUID_SVM_SVME_ADDR_CHK,
         .xlevel = 0x80000022,
-        .model_id = "AMD EPYC-Genoa Processor",
+        .model_id = "AMD EPYC 9654 96-Core Processor",
         .cache_info = &epyc_genoa_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
@@ -7077,7 +7077,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .vendor = CPUID_VENDOR_ZHAOXIN1,
         .family = 7,
         .model = 11,
-        .stepping = 3,
+        .stepping = 4,
         /* missing: CPUID_HT, CPUID_TM, CPUID_PBE */
         .features[FEAT_1_EDX] =
             CPUID_SS | CPUID_SSE2 | CPUID_SSE | CPUID_FXSR | CPUID_MMX |
@@ -7193,7 +7193,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             MSR_VMX_BASIC_INS_OUTS | MSR_VMX_BASIC_TRUE_CTLS,
         .features[FEAT_VMX_VMFUNC] = MSR_VMX_VMFUNC_EPT_SWITCHING,
         .xlevel = 0x80000008,
-        .model_id = "Zhaoxin YongFeng Processor",
+        .model_id = "Zhaoxin KH-40000 32-Core Processor",
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
             {
@@ -7220,9 +7220,9 @@ static const X86CPUDefinition builtin_x86_defs[] = {
         .name = "EPYC-Turin",
         .level = 0xd,
         .vendor = CPUID_VENDOR_AMD,
-        .family = 26,
-        .model = 0,
-        .stepping = 0,
+        .family = 25,
+        .model = 161,
+        .stepping = 2,
         .features[FEAT_1_ECX] =
             CPUID_EXT_RDRAND | CPUID_EXT_F16C | CPUID_EXT_AVX |
             CPUID_EXT_XSAVE | CPUID_EXT_AES |  CPUID_EXT_POPCNT |
@@ -7296,7 +7296,7 @@ static const X86CPUDefinition builtin_x86_defs[] = {
             CPUID_SVM_V_VMSAVE_VMLOAD | CPUID_SVM_VGIF |
             CPUID_SVM_VNMI | CPUID_SVM_SVME_ADDR_CHK,
         .xlevel = 0x80000022,
-        .model_id = "AMD EPYC-Turin Processor",
+        .model_id = "AMD EPYC 9965 192-Core Processor",
         .cache_info = &epyc_turin_cache_info,
         .versions = (X86CPUVersionDefinition[]) {
             { .version = 1 },
